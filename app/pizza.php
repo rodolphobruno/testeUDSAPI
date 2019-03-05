@@ -21,22 +21,27 @@ class pizza extends Model {
     /**
      * Get the comments for the blog post.
      */
-    public function sabors()
+    public function sabor()
     {
-        return $this->belongsToMany('App\sabor','sabor_id');
+        return $this->belongsTo(sabor::class);
     }
 
     /**
      * Get the comments for the blog post.
      */
-    public function tamanhos()
+    public function tamanho()
     {
-        return $this->belongsToMany('App\tamanhos','tamanho_id');
+        return $this->belongsTo(tamanho::class);
+    }
+
+    public function pizza_adicional()
+    {
+        return $this->hasMany(pizza_adicional::class);
     }
 
     public function pedido()
     {
-        return $this->hasOne('App\pedido');
+        return $this->hasOne(pedido::class);
     }
 
 }

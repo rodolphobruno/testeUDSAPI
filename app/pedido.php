@@ -20,7 +20,7 @@ class pedido extends Model {
 
     public function pizza()
     {
-        return $this->belongsTo('App\pizza','pizza_id');
+        return $this->belongsTo(pizza::class,'pizza_id');
     }
 
 }

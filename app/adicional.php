@@ -20,7 +20,7 @@ class adicional extends Model {
 
     public function pizza_adicional()
     {
-        return $this->belongsToMany('App\pizza_adicional');
+        return $this->hasMany(pizza_adicional::class);
     }
 
 }

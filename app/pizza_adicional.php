@@ -20,12 +20,12 @@ class pizza_adicional extends Model {
 
     public function pizza()
     {
-        return $this->belongsToMany('App\pizza','pizza_id');
+        return $this->belongsTo(pizza::class);
     }
 
     public function adicional()
     {
-        return $this->belongsToMany('App\adicional','adicional_id');
+        return $this->belongsTo(adicional::class);
     }
 
 }

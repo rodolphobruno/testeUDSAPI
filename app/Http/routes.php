@@ -39,6 +39,30 @@ Route::post('api/pizza', function(Request $request)
     return \testeUDSAPI\pizza::create($request->all());
 });
 
+//retorna a pizza montada
+Route::get('api/pizza/{id}', function($id) {
+    return \testeUDSAPI\pizza::with('sabor','tamanho')->find($id);
+});
+
+//retorna a pizza_adicional montada
+Route::get('api/pizzaAdicional/{pizzaId}', function($pizzaId) {
+    //return $id;
+   return\testeUDSAPI\pizza_adicional::with('pizza','adicional')->where('pizza_id', $pizzaId)->get();
+});
+
+//cria os adicionais da pizza
+Route::post('api/pizzaAdicional', function(Request $request)
+{
+    return \testeUDSAPI\pizza_adicional::create($request->all());
+});
+//retorna a pizza com adicionais
+
+//cria o pedido
+Route::post('api/pedido', function(Request $request)
+{
+    return \testeUDSAPI\pedido::create($request->all());
+});
+
 /*Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
