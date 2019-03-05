@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: testeUDSAPI
+        psr4_prefix: testeUDSAPI
+        src_path: app
