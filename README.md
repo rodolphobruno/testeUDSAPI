@@ -7,7 +7,7 @@ Nome do schema -> teste_uds
 
 **ARQUIVO DE CONEXÃO**
 
-.env localizado na pasta raiz do 
+.env localizado na pasta raiz do sistema
 
 ****MIGRATIONS E SEEDS****
 Foram criadas as tabelas e as cargas iniciais, para criaçao das tabelas do projeto. Para a realização da carga rode o comando artisan:
